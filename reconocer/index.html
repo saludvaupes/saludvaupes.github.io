@@ -100,8 +100,8 @@ a{color:inherit}
 .marcas{display:flex; align-items:center; gap:12px; flex:1; min-width:0}
 .marcas img{height:30px; width:auto; flex:0 0 auto}
 .marcas .divisor{width:1px; height:26px; background:var(--linea); flex:0 0 auto}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .marcas img{filter:brightness(0) invert(1) opacity(.92)} }
-:root[data-theme="dark"] .marcas img{filter:brightness(0) invert(1) opacity(.92)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .marcas img{background:#FBF8EF; border-radius:5px; padding:3px 5px} }
+:root[data-theme="dark"] .marcas img{background:#FBF8EF; border-radius:5px; padding:3px 5px}
 .salir{
   font:600 13.5px/1 'Libre Franklin',sans-serif; color:#fff; background:var(--alerta);
   border:0; border-radius:100px; padding:11px 15px; cursor:pointer; flex:0 0 auto;
@@ -331,8 +331,8 @@ textarea:focus{border-color:var(--morado); outline:none}
 footer{background:var(--tinta); color:#D8CDBE; margin-top:64px; padding:46px 0 calc(40px + env(safe-area-inset-bottom,0px))}
 :root[data-theme="dark"] footer{background:var(--papel-2)}
 footer .envoltura{display:grid; gap:22px}
-footer .marcas-pie{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
-footer .marcas-pie img{height:34px; filter:brightness(0) invert(1) opacity(.9)}
+footer .marcas-pie{display:inline-flex; align-items:center; gap:22px; flex-wrap:wrap; background:#FBF8EF; border-radius:12px; padding:16px 22px; width:fit-content}
+footer .marcas-pie img{height:46px; filter:none; opacity:1}
 footer p{font-size:14px; line-height:1.55; margin:0; max-width:60ch}
 footer a{color:var(--dorado-suave)}
 
@@ -931,8 +931,9 @@ var PUERTAS = [
 /* ---------- 6. LÍNEAS ---------- */
 var LINEAS = [
   {n:"123", t:"Emergencias", s:"Policía, ambulancia y bomberos. 24 horas.", c:"var(--alerta)", tel:"123"},
-  {n:"302 622 8859", t:"Hospital San Antonio de Mitú", s:"Urgencias y atención en salud mental.", c:"var(--turquesa)", tel:"3026228859"},
-  {n:"155", t:"Línea SALVIA", s:"Orientación a mujeres víctimas de violencia, en articulación con la Policía Nacional.", c:"var(--morado)", tel:"155"},
+  {n:"312 510 3490", t:"Hospital San Antonio de Mitú", s:"Urgencias las 24 horas y atención en salud mental.", c:"var(--turquesa)", tel:"3125103490"},
+  {n:"313 425 4479", t:"CRUE Vaupés", s:"Centro Regulador de Urgencias y Emergencias: orientación médica y traslados.", c:"var(--turquesa)", tel:"3134254479"},
+  {n:"155", t:"Línea Estrategia Patrulla Púrpura", s:"Orientación a mujeres víctimas de violencia, en articulación con la Policía Nacional.", c:"var(--morado)", tel:"155"},
   {n:"310 288 2983", t:"Policía Nacional — Policía Comunitaria", s:"Vaupés.", c:"var(--naranja)", tel:"3102882983"},
   {n:"122", t:"Fiscalía General de la Nación", s:"Denuncias.", c:"var(--naranja)", tel:"122"},
   {n:"141", t:"ICBF", s:"Niñas, niños y adolescentes. Con apoyo de la Policía de Infancia y Adolescencia.", c:"var(--verde)", tel:"141"}
@@ -1142,12 +1143,12 @@ function pintarResultado(hallados, leves, estado, puntos){
     cuerpo.appendChild(crear("div","tarjeta-res",
       '<h3 style="color:var(--turquesa)">Antes de seguir: lo que sientes importa</h3>'+
       '<p>Vivir esto agota a cualquiera, y lo que estás cargando es demasiado para llevarlo en silencio. No tienes que resolverlo sola ni hoy.</p>'+
-      '<p>Llama al <b><a href="tel:3026228859">302 622 8859</a></b>, la línea del Hospital San Antonio de Mitú, o acércate a tu puesto de salud y di que necesitas atención en salud mental. Si sientes que podrías hacerte daño, quédate cerca de alguien de confianza y pídele que te acompañe a urgencias o llama al <a href="tel:123">123</a>.</p>'+
+      '<p>Llama al <b><a href="tel:3125103490">312 510 3490</a></b>, la línea del Hospital San Antonio de Mitú, o acércate a tu puesto de salud y di que necesitas atención en salud mental. Si sientes que podrías hacerte daño, quédate cerca de alguien de confianza y pídele que te acompañe a urgencias o llama al <a href="tel:123">123</a>.</p>'+
       '<p style="margin:0">Tienes derecho a atención psicológica con las sesiones que necesites (Ley 1616 de 2013 y Ley 2460 de 2025). No es un favor: es tu derecho.</p>'));
   } else if(estado.salud>0){
     cuerpo.appendChild(crear("div","tarjeta-res",
       '<h3 style="color:var(--turquesa)">Tu salud mental también es parte de la ruta</h3>'+
-      '<p style="margin:0">El miedo sostenido, el insomnio y la angustia son consecuencias de la violencia, no debilidad tuya. Pide atención psicológica en tu EPS o en el Hospital San Antonio de Mitú (<a href="tel:3026228859">302 622 8859</a>).</p>'));
+      '<p style="margin:0">El miedo sostenido, el insomnio y la angustia son consecuencias de la violencia, no debilidad tuya. Pide atención psicológica en tu EPS o en el Hospital San Antonio de Mitú (<a href="tel:3125103490">312 510 3490</a>).</p>'));
   }
 
   /* --- hallazgos --- */
